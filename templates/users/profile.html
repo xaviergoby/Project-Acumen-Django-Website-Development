@@ -1,0 +1,207 @@
+{% extends "study/base_template.html" %}
+{#{% load crispy_forms_tags %}#}    <!-- WHY DO I NEED THIS HERE? -->
+{% load static %}
+{% load crispy_forms_tags %}
+
+<!-- Title -->
+{% block title %}Profile Page{% endblock %}
+
+
+<!-- Navbar -->
+{% block nav-profile %}w3-white"{% endblock %}
+
+{##}
+{#<!-- Header -->#}
+{#{% block header %}#}
+{#{% block header-title %}Profile Page Overview:{% endblock %}#}
+{#{% block header-footer %}<button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Profile page overview</button>{% endblock %}#}
+{#{% block header-footer %}#}
+{#	<div class=" w3-padding-large w3-large w3-margin-top">Username: {{ user.username }}<br>Email: {{ user.email }}</div>#}
+{#	<div class="w3-left w3-red w3-padding">Username: {{ user.username }}<br>Email: {{ user.email }}</div>#}
+{#	<div class="float-left">Username: {{ user.username }}<br>Email: {{ user.email }}</div><br>#}
+{#	<hr>#}
+{#{% endblock %}#}
+{#{% endblock %}#}
+
+<!-- First Grid -->
+{% block content %}
+	<div class="container">
+	<div class="col-md-6">
+		<div class="user-profile-info">
+			<h2>You User Profile Info</h2>
+			<form method="POST">
+				{% csrf_token %}
+{#				{{ form|crispy }}#}
+				{{ form.educational_level|as_crispy_field }}
+				{{ form.educational_institution_name|as_crispy_field }}
+{#				{{ form.first_name }}#}
+{#				<button type="submit" class="btn btn-primary">Create an account</button>#}
+{#				<input type="submit" >#}
+{#				 First name: <input type="text" name="Firstname" value= '{% if submitbutton == "Submit" %} {{ firstname }} {% endif %}'/><br><br>#}
+{#				 Last name: <input type="text" name="Lastname" value= '{% if submitbutton == "Submit" %} {{ lastname }} {% endif %}'/><br><br>#}
+				 <input type="Submit" name="Submit" value="Submit"/>
+			</form>
+		</div>
+	</div>
+
+
+
+	<div class="container">
+{#	<div class="row">#}
+{#	<div class="row">#}
+	<div class="col-md-6">
+		<div class="row">
+			<div class="profile-img">
+				{#									                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>#}
+				{#						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Jordan_Peterson_June_2018.jpg/220px-Jordan_Peterson_June_2018.jpg" alt=""/>#}
+				{#						<img src="https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/22365372_10155727762960917_939001938656822396_n.jpg?_nc_cat=101&_nc_ht=scontent-ams3-1.xx&oh=0eaeed8d5296ab0f0220616287024493&oe=5D589F46" class="img-fluid" alt=""/>#}
+				{#						<img src="https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/23031162_1462064337222260_871710508080464123_n.jpg?_nc_cat=104&_nc_ht=scontent-ams3-1.xx&oh=8cc750d994197b18cc555b244f9c032b&oe=5D514E1E" class="img-fluid" alt=""/>#}
+				{#						<img src="https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/23031162_1462064337222260_871710508080464123_n.jpg?_nc_cat=104&_nc_ht=scontent-ams3-1.xx&oh=8cc750d994197b18cc555b244f9c032b&oe=5D514E1E" class="mh-10" alt="Max-height 100%"/>#}
+				{#						<img src="https://scontent-ams3-1.xx.fbcdn.net/v/t1.0-9/23031162_1462064337222260_871710508080464123_n.jpg?_nc_cat=104&_nc_ht=scontent-ams3-1.xx&oh=8cc750d994197b18cc555b244f9c032b&oe=5D514E1E" alt="Simply Easy Learning" width="300" height="500">#}
+				{#						<img src="https://www.syfy.com/sites/syfy/files/styles/1200x680/public/2018/04/iron-man-movie-tony-stark-on-couch-photo_1.jpg" alt="Simply Easy Learning" width="800" height="500>">#}
+				<img src="data:image/png;base64,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" alt="Simply Easy Learning" width="250" height="250>">
+				<div class="file btn btn-md btn-primary">
+					Change Photo
+					<input type="file" name="file"/>
+				</div>
+			</div>
+		</div>
+{#	<div class="col-lg-7>  <!-- col-xl-6 -->#}
+		<div class="col-md-8">  <!-- col-xl-6 -->
+{#		<div class="profile-head">#}
+			<p class="h5 my-3   ">Username: {{ user.username }}</p>
+			<p class="h5 my-3   ">Email: {{ user.email }}</p>
+			<p class="h5 my-1">Bio:</p>
+			<form>
+				<div class="form">
+					<label for="exampleInputBio1"></label>
+					<input type="text" class="form-control" id="exampleInputBio1" aria-describedby="bioDescription" placeholder="A short little bio/description of yourself">
+					<small id="emailHelp" class="form-text text-muted">This is not mandatory!</small>
+				</div>
+			</form>
+{#		</div>#}
+		<div class="row">
+			<div class="col-md-6">
+				<div class="profile-work">
+					<p class="lead my-2">Basic Info:</p>
+					<hr>
+					<div class="basic-info my-10"></div>
+					{#						<ul>#}
+					{#							<li><a href="">Hyperlink Text</a><br/></li>#}
+					{#							<li><p>Sex: Male</p></li>#}
+					{#							<li><p>Occupation: Exam crammer</p></li>#}
+					{#							<li><p>Characteristic Trait: Not Dutch</p></li>#}
+					{#							<li><p>Motto: "Scuse me, Sir!?!?"</p></li>#}
+					{#							<li><p>Language (& Proficiency): Memes - Fluent (C2+)</p></li>#}
+					{#							<li><p>Origin: Boers</p></li>#}
+					{#						</ul>#}
+					<p class="lead my-3">Skills:</p>
+					<hr>
+					{#						<ul>#}
+					{#							<li><a href="">Hyperlink Text</a><br/></li>#}
+					{#							<li><p>May roll anything from weed/tobacco to nuclear grade armaments into a nice fine smokable cylinder</p></li>#}
+					{#							<li><p>Make things fly high</p></li>#}
+					{#							<li><p>Make people get high</p></li>#}
+					{#						</ul>#}
+				</div>
+			</div>
+			<div class="col-md-8">
+				<div class="tab-content profile-tab" id="myTabContent">
+					<div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+						<div class="row">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+{#			<div class="container">#}
+{#				<div class="col-md-6">#}
+{#					<h5>Hey there</h5>#}
+{#				</div>#}
+{#			</div>#}
+	</div>
+	</div>
+{#	<div class="container">#}
+{#		<div class="col-md-12">#}
+{#			<h5>Hey there</h5>#}
+{#		</div>#}
+{#	</div>#}
+{#	<div class="row">#}
+{#        <div class="col-sm-4">.col-sm-4</div>#}
+{#        <div class="col-sm-8">.col-sm-8</div>#}
+{#	</div>#}
+{#<div class="row">#}
+{#	<div class="col-sm-4">.col-sm-4</div>#}
+{#	<div class="col-sm-8">.col-sm-8</div>#}
+{#</div>#}
+{#	</div>#}
+{#	</div>#}
+{#</div>#}
+{#<div class="col-md-6 p-0 bg-white h-md-100 loginarea">#}
+{#    <div class="d-md-flex align-items-center h-md-100 p-5 justify-content-center">#}
+{#        Second half content here#}
+{#    </div>#}
+{#</div>#}
+
+	<p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+	</p>
+{% endblock %}
+
+
+
+
+{##}
+{#{% block content %}#}
+{#	<div class="container">#}
+{#		<div class="row">#}
+{#			<div class="row">#}
+{#			<div class="col-md-4">#}
+{#				<div class="row">#}
+{#					<div class="profile-img">#}
+{#									                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>#}
+{#						<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Jordan_Peterson_June_2018.jpg/220px-Jordan_Peterson_June_2018.jpg" alt=""/>#}
+{#						<div class="file btn btn-md btn-primary">#}
+{#							Change Photo#}
+{#							<input type="file" name="file"/>#}
+{#						</div>#}
+{#					</div>#}
+{#				</div>#}
+{#			</div>#}
+{#		</div>#}
+{#	</div>#}
+{#{%  endblock %}#}

@@ -1,0 +1,35 @@
+{% extends "study/base_template.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}Log In{% endblock %}
+{% block nav-login %}w3-white"{% endblock %}
+
+
+{% block content %}
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="col-8">
+				<h1 class="mt-0">Log In</h1>
+				<hr class="mt-0 mb-0">
+				<div class="content-section">
+					<form method="POST">
+						{% csrf_token %}
+						<fieldset class="form-group">
+							<legend class="border-bottom mb-0 invisible">Log In</legend>
+							{{ form|crispy }}
+						</fieldset>
+						<div class="form-group">
+							<button class="btn btn-outline-info" type="submit">Login</button>
+						</div>
+					</form>
+					<div class="border-top pt-3">
+						<small class="text-muted">
+							Need An Account? <a class="ml-2" href="#">Sign Up Now</a>
+						</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}

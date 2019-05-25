@@ -1,0 +1,19 @@
+{#{% load crispy_forms_tags %}#}
+<!DOCTYPE html>
+{% load crispy_forms_tags %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Django Forms Test</title>
+</head>
+<body>
+<h2>Django Forms Test</h2>
+<h4>Rendering of home_page.html</h4>
+
+<form method="post">
+    {% csrf_token %}
+    {{form|crispy}}
+	<button type="submit" >Sign in</button>
+</form>
+</body>
+</html>

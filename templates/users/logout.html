@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<h1>This is the logout page!</h1>
+
+</body>
+</html>
+
+
+
+{% extends "study/base_template.html" %}
+{#{% load crispy_forms_tags %}#}    <!-- WHY DO I NEED THIS HERE? -->
+
+<!-- Title -->
+{% block title %}Logout{% endblock %}
+
+
+<!-- Navbar -->
+{% block nav-logout %}w3-white"{% endblock %}
+
+
+<!-- Header -->
+{% block header-title %}You have been successfully logged out!{% endblock %}
+{#{% block header-footer %}<button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Profile page overview</button>{% endblock %}#}
+{#{% block header-footer %}<div class=" w3-padding-large w3-large w3-margin-top">Username: {{ user.username }}<br>Email: {{ user.email }}{% endblock %}</div>#}
+
+<!-- First Grid -->
+{% block content %}
+{#	<div class="content-section">#}
+{#		<h2 class="account-heading">{{ user.username }}</h2>#}
+{#		<p class="text-secondary">{{ user.email }}</p>#}
+{#	</div>#}
+{% endblock %}

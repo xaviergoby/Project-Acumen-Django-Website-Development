@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+</head>
+<body>
+<h1>If you are on this page it means that if request.user.is_authenticated: returned false!</h1>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{#{% extends "study/core_base_template.html" %}#}
+{#{% extends "study/base_template.html" %}#}
+{##}
+{#{% block title %}Test View{% endblock %}#}
+{##}
+{#{% block nav-test_view %}w3-white"{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#	<div class="container justify-content-center">#}
+{#        <p>Hey there</p>#}
+{#        <p>Hey there</p>#}
+{#		<p class="h5 my-3">Username: {{ user.username }}</p>#}
+{#		<p class="h5 my-3">email: {{ user.email }}</p>#}
+{#		<p class="h5 my-3">password1: {{ user.password1 }}</p>#}
+{#		<p class="h5 my-3">last_name: {{ user.last_name }}</p>#}
+{#	</div>#}
+{##}
+{#	<form action="" method="POST">#}
+{#		{% csrf_token %}#}
+{#		First name: <input type="text" name="Firstname" value= '{% if submitbutton == "Submit" %} {{ firstname }} {% endif %}'/><br><br>#}
+{#		Last name: <input type="text" name="Lastname" value= '{% if submitbutton == "Submit" %} {{ lastname }} {% endif %}'/><br><br>#}
+{#		City: <input type="text" name="City" value= '{% if submitbutton == "Submit" %} {{ city }} {% endif %}'/><br><br>#}
+{#		State: <input type="text" name="State" value= '{% if submitbutton == "Submit" %} {{ state }} {% endif %}'/><br><br>#}
+{#		<input type="Submit" name="Submit" value="Submit"/>#}
+{#	</form>#}
+{##}
+{##}
+{#	{% if submitbutton == "Submit"  %}#}
+{#		<h1> Your first name is {{ firstname }}</h1>#}
+{#		<h1> Your last name is {{ lastname }}</h1>#}
+{#		<h1> Your city is {{ city }} </h1>#}
+{#		<h1> Your state is {{ state }} </h1>#}
+{#	{% endif %}#}
+{#	</div>#}
+{#{% endblock %}#}
