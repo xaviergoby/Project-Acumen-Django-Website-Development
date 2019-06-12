@@ -25,8 +25,9 @@ SECRET_KEY = '%17*vh%6!7*#nvu$e-xe=qb=@wjyy9onk-hzmimso74f13y+fl'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+# ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = ['aqmen.pythonanywhere.com']
+ALLOWED_HOSTS = ['aqumenv2.eu.pythonanywhere.com'] #
 
 # Application definition
 
